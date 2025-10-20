@@ -23,7 +23,7 @@
     /// The bytes of the UniqueID are preserved exactly.
     /// Both random (v4) and time-ordered (v6) IDs are supported.
     ///
-    init(_ uniqueID: UniqueID) {
+    public init(_ uniqueID: UniqueID) {
       self.init(uuid: uniqueID.bytes)
     }
   }
