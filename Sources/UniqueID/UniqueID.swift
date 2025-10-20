@@ -151,7 +151,7 @@
 /// - ``version``
 /// - ``null``
 ///
-public struct UniqueID {
+struct UniqueID {
 
   public typealias Bytes = (
     UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
@@ -160,11 +160,10 @@ public struct UniqueID {
 
   /// The bytes of this UUID.
   ///
-  public let bytes: Bytes
+  let bytes: Bytes
 
   /// Creates a UUID with the given bytes.
   ///
-  @inlinable
   public init(bytes: Bytes) {
     self.bytes = bytes
   }
@@ -178,7 +177,6 @@ public struct UniqueID {
 
   /// Creates a UUID with the given sequence of bytes. The sequence must contain exactly 16 bytes.
   ///
-  @inlinable
   public init?<Bytes>(bytes: Bytes) where Bytes: Sequence, Bytes.Element == UInt8 {
     var uuid = UniqueID.null.bytes
     let bytesCopied = withUnsafeMutableBytes(of: &uuid) { uuidBytes in
@@ -264,7 +262,6 @@ extension UniqueID {
 
   /// The version of this UUID, if it can be determined.
   ///
-  @inlinable
   public var version: Int? {
     // Check the variant.
     guard (bytes.8 &>> 6) == 0b00000010 else { return nil }
@@ -284,7 +281,6 @@ extension UniqueID {
   /// > Important:
   /// > The pointer provided to `body` must not escape the closure.
   ///
-  @inlinable
   public func withUnsafeBytes<T>(_ body: (UnsafeRawBufferPointer) throws -> T) rethrows -> T {
     try Swift.withUnsafeBytes(of: bytes, body)
   }

@@ -23,8 +23,7 @@
     /// The bytes of the UniqueID are preserved exactly.
     /// Both random (v4) and time-ordered (v6) IDs are supported.
     ///
-    @inlinable
-    public init(_ uniqueID: UniqueID) {
+    init(_ uniqueID: UniqueID) {
       self.init(uuid: uniqueID.bytes)
     }
   }
@@ -55,7 +54,6 @@
     /// // ✅ "2021-12-18 09:24:31 +0000"
     /// ```
     ///
-    @inlinable
     public var timestamp: Date {
       Date(timeIntervalSince1970: TimeInterval(_uuid_timestamp_to_unix(timestamp: rawTimestamp)) / 10_000_000)
     }

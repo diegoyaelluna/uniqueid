@@ -278,7 +278,6 @@ extension UniqueID {
   ///   - sequence:     The sequence number. Only the least significant 12 bits will be used. The default is 0.
   ///   - node:         The node ID. Only the least significant 48 bits will be used. The default is 0.
   ///
-  @inlinable
   public static func timeOrdered(rawTimestamp: UInt64, sequence: UInt16 = 0, node: UInt64 = 0) -> UniqueID {
     var timestampAndVersion = (rawTimestamp &<< 4).bigEndian
     Swift.withUnsafeMutableBytes(of: &timestampAndVersion) { timestamp_bytes in
@@ -313,7 +312,7 @@ extension UniqueID {
 
 
 extension UniqueID.Components where Self == UniqueID.TimeOrdered {
-  public static var timeOrdered: Self { fatalError("Not intended to be called") }
+    static var timeOrdered: Self { fatalError("Not intended to be called") }
 }
 
 extension UniqueID {
@@ -342,7 +341,6 @@ extension UniqueID {
 
     public let uuid: UniqueID
 
-    @inlinable
     public init?(_ uuid: UniqueID) {
       guard uuid.version == 6 else { return nil }
       self.uuid = uuid

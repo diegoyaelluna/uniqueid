@@ -14,7 +14,7 @@
 
 /// A type which exposes a view of the embedded information within certain UUIDs.
 ///
-public protocol _UniqueIDComponents {
+protocol _UniqueIDComponents {
   init?(_ uuid: UniqueID)
 }
 

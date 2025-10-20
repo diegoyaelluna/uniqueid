@@ -56,7 +56,7 @@ extension UniqueID {
   /// > This is not the same as constructing a UUID from its raw bytes.
   /// > The bytes provided to this function must contain a formatted UUID string.
   ///
-  @inlinable @inline(never)
+  @inline(never)
   public init?<UTF8Bytes>(
     utf8: UTF8Bytes
   ) where UTF8Bytes: BidirectionalCollection, UTF8Bytes.Element == UInt8 {

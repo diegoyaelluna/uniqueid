@@ -71,7 +71,6 @@ extension UniqueID {
   ///
   /// [RFC-4122-UUIDv4]: https://datatracker.ietf.org/doc/html/rfc4122#section-4.4
   ///
-  @inlinable
   public static func random<RNG>(using rng: inout RNG) -> UniqueID where RNG: RandomNumberGenerator {
     var bytes = UniqueID.null.bytes
     withUnsafeMutableBytes(of: &bytes) { dest in
