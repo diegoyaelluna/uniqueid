@@ -14,7 +14,7 @@
 
 /// A type which exposes a view of the embedded information within certain UUIDs.
 ///
-protocol _UniqueIDComponents {
+public protocol _UniqueIDComponents {
   init?(_ uuid: UniqueID)
 }
 
@@ -69,7 +69,6 @@ extension UniqueID {
   /// // ✅ "2021-12-18 09:24:31 +0000"
   /// ```
   ///
-  @inlinable
   public func components<ViewType: Components>(_: @autoclosure () -> ViewType) -> ViewType? {
     ViewType(self)
   }

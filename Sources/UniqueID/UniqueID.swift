@@ -151,7 +151,7 @@
 /// - ``version``
 /// - ``null``
 ///
-struct UniqueID {
+public struct UniqueID {
 
   public typealias Bytes = (
     UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8,
