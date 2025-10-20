@@ -312,7 +312,7 @@ extension UniqueID {
 
 
 extension UniqueID.Components where Self == UniqueID.TimeOrdered {
-    internal static var timeOrdered: Self { fatalError("Not intended to be called") }
+    public static var timeOrdered: Self { fatalError("Not intended to be called") }
 }
 
 extension UniqueID {

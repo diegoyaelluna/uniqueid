@@ -160,7 +160,7 @@ public struct UniqueID {
 
   /// The bytes of this UUID.
   ///
-  let bytes: Bytes
+  public let bytes: Bytes
 
   /// Creates a UUID with the given bytes.
   ///
