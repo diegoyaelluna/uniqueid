@@ -29,7 +29,7 @@ var settings: [SwiftSetting]? = [
   // - UUID <-> UniqueID conversion APIs.
   // - UUID timestamps as 'Date' (but Date will soon join the standard library).
   //.define("NO_FOUNDATION_COMPAT"),
-
+    .unsafeFlags(["-enable-library-evolution"], .when(configuration: .release))
 ]
 
 if settings?.isEmpty == true { settings = nil }
